@@ -1,0 +1,11 @@
+__pycache__
+.idea
+.gitignore.swp
+best_score.txt
+images/bird_night.png
+images/game_over.png
+images/background.png
+images/start_button2.0.png
+images/title.png
+images/pipe.png
+images/background_small.png
