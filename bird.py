@@ -1,9 +1,12 @@
 
 import pygame
+import platform
 
 class Bird:
 
     def __init__(self, screen):
+        self.system = platform.system()
+
         self.screen = screen
         self.SCREEN_WIDTH, self.SCREEN_HEIGHT = pygame.display.get_surface().get_size()
 
@@ -28,7 +31,11 @@ class Bird:
 
 
     def initialize_bird_position(self):
-        self.bird_image = pygame.image.load(r'images/bird_day.png')
+        if self.system == 'Linux':
+            self.bird_image = pygame.image.load(r'images/bird_day.png')
+        else:
+            self.bird_image = pygame.image.load(r'images\bird_day.png')
+
         self.bird_rect = pygame.Rect(0, 0, self.BIRD_WIDTH, self.BIRD_HEIGHT)
         self.bird_rect.center = self.screen.get_rect().center
 

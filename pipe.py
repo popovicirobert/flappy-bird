@@ -1,10 +1,13 @@
 
 import pygame
 from pygame.sprite import Sprite
+import platform
 
 class Pipe(Sprite):
 
     def __init__(self, screen, speed, pipe_size, pipe_index):
+        self.system = platform.system()
+
         super(Pipe, self).__init__()
 
         self.screen = screen
@@ -24,12 +27,20 @@ class Pipe(Sprite):
         self.PIPE_WIDTH = 74
         self.PIPE_HEIGHT = 423
 
-        self.image_up = pygame.image.load(r'images\pipe_small_up.png')
+        if self.system == 'Linux':
+            self.image_up = pygame.image.load(r'images/pipe_small_up.png')
+        else:
+            self.image_up = pygame.image.load(r'images\pipe_small_up.png')
+
         self.rect_up = pygame.Rect(0, 0, self.PIPE_WIDTH, self.PIPE_HEIGHT)
         self.rect_up.x = self.SCREEN_WIDTH
         self.rect_up.bottom = self.PIPE_Y[self.pipe_size] - self.SPACE
 
-        self.image_down = pygame.image.load(f'images\pipe_small_down.png')
+        if self.system == 'Linux':
+            self.image_down = pygame.image.load(f'images/pipe_small_down.png')
+        else:
+            self.image_down = pygame.image.load(f'images\pipe_small_down.png')
+
         self.rect_down = pygame.Rect(0, 0, self.PIPE_WIDTH, self.PIPE_HEIGHT)
         self.rect_down.x = self.SCREEN_WIDTH
         self.rect_down.y = self.PIPE_Y[self.pipe_size]

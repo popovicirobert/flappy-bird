@@ -1,5 +1,6 @@
 
 import pygame
+import platform
 from colors import Colors
 
 class Button:
@@ -11,11 +12,17 @@ class Button:
                  font = '',
                  width = 150, height = 50):
 
+        self.system = platform.system()
+
         self.screen = screen
         self.screen_rect = self.screen.get_rect()
 
         if not font:
-            font = pygame.font.Font(r'fonts\flappybirdy-font\flappybirdy.ttf', 48)
+            if self.system == 'Linux':
+                font = pygame.font.Font(r'fonts/flappybirdy-font/flappybirdy.ttf', 48)
+            else:
+                font = pygame.font.Font(r'fonts\flappybirdy-font\flappybirdy.ttf', 48)
+
         self.font = font
 
         self.button_rect = pygame.Rect(0, 0, width, height)

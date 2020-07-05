@@ -1,6 +1,6 @@
 
 import pygame
-import sys
+import sys, platform
 from bird import Bird
 from sliding_background import SlidingBackground
 from title import Title
@@ -11,6 +11,8 @@ from scoreboard import ScoreBoard
 class FlappyBird:
 
     def __init__(self):
+        self.system = platform.system()
+
         pygame.init()
         pygame.display.set_caption('Flappy Bird')
 
@@ -22,10 +24,20 @@ class FlappyBird:
 
         self.sliding_background = SlidingBackground(self.screen)
 
-        self.flappy_bird_title = Title(self.screen, r'images\title2.0.png', 466, 137, 50)
-        self.game_over_title = Title(self.screen, r'images\game_over2.0.png', 383, 90, 50)
+        if self.system == 'Linux':
+            self.flappy_bird_title = Title(self.screen, r'images/title2.0.png', 466, 137, 50)
+        else:
+            self.flappy_bird_title = Title(self.screen, r'images\title2.0.png', 466, 137, 50)
 
-        self.start_image_button = ImageButton(self.screen, r'images\start_button3.0.png', 183, 109, 400)
+        if self.system == 'Linux':
+            self.game_over_title = Title(self.screen, r'images/game_over2.0.png', 383, 90, 50)
+        else:
+            self.game_over_title = Title(self.screen, r'images\game_over2.0.png', 383, 90, 50)
+
+        if self.system == 'Linux':
+            self.start_image_button = ImageButton(self.screen, r'images/start_button3.0.png', 183, 109, 400)
+        else:
+            self.start_image_button = ImageButton(self.screen, r'images\start_button3.0.png', 183, 109, 400)
 
         self.scoreboard = ScoreBoard(self.screen)
 

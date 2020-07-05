@@ -1,4 +1,5 @@
 
+import platform
 import pygame
 from pygame.sprite import Group
 from pipe import Pipe
@@ -8,10 +9,16 @@ from colors import Colors
 class SlidingBackground:
 
     def __init__(self, screen):
+        self.system = platform.system()
+
         self.screen = screen
         self.SCREEN_WIDTH, self.SCREEN_HEIGHT = pygame.display.get_surface().get_size()
 
-        self.background_image = pygame.image.load(r'images\background_medium.png')
+        if self.system == 'Linux':
+            self.background_image = pygame.image.load(r'images/background_medium.png')
+        else:
+            self.background_image = pygame.image.load(r'images\background_medium.png')
+
         self.speed = 5
 
         self.split_line = 0
