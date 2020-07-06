@@ -21,6 +21,8 @@
 <br/>
 
 <p>
-  <b>Run command:</b>
-    <li>python3 main.py</li>
+  <h3><b>Run command:</b></h3>
+    <ul>
+      <li>python3 main.py</li>
+    </ul>
 </p>
