@@ -3,13 +3,13 @@
 <br/>
 
 <p>
-  <b>Requirements:</b>
+  <h3><b>Requirements:</b></h3>
     <ul>
       <li>
         Packages:
           <ul>
-            <li>Pygame 2.0.0.dev6</li>
-            <li>Python3.6</li>
+            <li><b>Pygame 2.0.0.dev6</b></li>
+            <li><b>Python3.6</b></li>
           </ul>
       </li>
       <li>
