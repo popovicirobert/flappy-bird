@@ -3,9 +3,15 @@
 <br/>
 
 <p>
-  <b>Required packages:</b>
-    <li>Pygame 2.0.0.dev6</li>
-    <li>Python3.6</li>
+  <b>Requirements:</b>
+    <li>
+      <b>Packages:</b>
+        <li>Pygame 2.0.0.dev6</li>
+        <li>Python3.6</li>
+    </li>
+    <li>
+      <b>Window resolution: 563 x 1000 pixels</b>
+    </li>
 </p>
 
 <br/>
