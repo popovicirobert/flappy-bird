@@ -6,15 +6,14 @@
   <b>Requirements:</b>
     <ul>
       <li>
-        <b>Packages:</b>
+        Packages:
           <ul>
             <li>Pygame 2.0.0.dev6</li>
             <li>Python3.6</li>
           </ul>
       </li>
       <li>
-        <b>Window resolution: 563 x 1000 pixels
-        </b>
+        Window resolution: <b>563 x 1000 pixels</b>
       </li>
     </ul>
 </p>
